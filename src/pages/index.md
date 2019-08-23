@@ -2,7 +2,6 @@
 templateKey: index-page
 title: JJUG CCC 2019 Fall
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
 subheading: 2019/11/24(Sat) ベルサール新宿グランドコンファレンスセンター
 mainpitch:
   title: 概要
