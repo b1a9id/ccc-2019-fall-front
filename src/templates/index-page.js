@@ -119,6 +119,21 @@ export const IndexPageTemplate = ({
                                     </div>
                                 </div>
                                 <Features gridItems={intro.blurbs}/>
+                                <div className="content">
+                                    <div>
+                                        <div className="row">
+                                            <div className="col-md-12 p-0">
+                                                <iframe
+                                                    style={{
+                                                        border:0,
+                                                        height:'400px',
+                                                        width:'100%'
+                                                    }}
+                                                    title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.2270064349586!2d139.69052299999998!3d35.696031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f2d4b75dcb57%3A0x634be9803c318437!2z44OZ44Or44K144O844Or5paw5a6_44Kw44Op44Oz44OJ44Kz44Oz44OV44Kh44Os44Oz44K544K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1517582829129"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="column is-12">
                                     <h3 className="has-text-weight-semibold is-size-2">
                                         Latest stories
