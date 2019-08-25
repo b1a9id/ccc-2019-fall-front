@@ -22,25 +22,25 @@ const Footer = class extends React.Component {
                 <section>
                   <h3>About Us</h3>
                   <p>
-                    <a href="http://www.java-users.jp/?page_id=7" target="_blank">JJUGについて</a>
+                    <a href="http://www.java-users.jp/?page_id=7" target="_blank" rel="noopener noreferrer">JJUGについて</a>
                   </p>
                   <p>
-                    <a href="http://www.java-users.jp/?page_id=18" target="_blank">入会案内</a>
+                    <a href="http://www.java-users.jp/?page_id=18" target="_blank" rel="noopener noreferrer">入会案内</a>
                   </p>
                   <p>
-                    <a href="http://www.java-users.jp/?page_id=166" target="_blank">幹事会メンバー</a>
+                    <a href="http://www.java-users.jp/?page_id=166" target="_blank" rel="noopener noreferrer">幹事会メンバー</a>
                   </p>
                 </section>
               </div>
               <div className="column is-2 social">
-                <a title="facebook" href="https://www.facebook.com/japanjug/" target="_blank">
+                <a title="facebook" href="https://www.facebook.com/japanjug/" target="_blank" rel="noopener noreferrer">
                   <img
                     src={facebook}
                     alt="Facebook"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="twitter" href="https://twitter.com/jjug" target="_blank">
+                <a title="twitter" href="https://twitter.com/jjug" target="_blank" rel="noopener noreferrer">
                   <img
                     className="fas fa-lg"
                     src={twitter}
