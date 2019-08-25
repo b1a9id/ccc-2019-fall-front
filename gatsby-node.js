@@ -1,7 +1,9 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const _ = require('lodash');
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const axios = require('axios');
+const crypto = require('crypto');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -84,4 +86,42 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
-}
+};
+
+exports.sourceNodes = async ({ actions }) => {
+  const { createNode } = actions;
+
+  // fetch raw data from the randomuser api
+  const fetchBeginnerSubmissions = () => axios.get(`http://www.java-users.jp/api/submission-page/2019Spring/BEGINNER`);
+  // await for results
+  const res = await fetchBeginnerSubmissions();
+
+  // map into these results and create nodes
+  res.data.map((submission, i) => {
+    // Create your node object
+    const submissionNode = {
+      // Required fields
+      id: `${i}`,
+      parent: `__SOURCE__`,
+      internal: {
+        type: `BeginnerSubmission`, // name of the graphQL query --> allRandomUser {}
+        // contentDigest will be added just after
+        // but it is required
+      },
+      children: [],
+
+      // Other fields that you want to query with graphQl
+      title: submission.title
+    };
+
+    // Get content digest of node. (Required field)
+    // add it to userNode
+    submissionNode.internal.contentDigest = crypto
+        .createHash(`md5`)
+        .update(JSON.stringify(submissionNode))
+        .digest(`hex`);
+
+    // Create node with the gatsby createNode() API
+    createNode(submissionNode);
+  });
+};
