@@ -15,12 +15,25 @@ const SubmissionsPage = (props) => {
                               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                                   初心者向け
                               </h2>
-                              {beginnerSubmissions.map((submission, i) => {
-                                  const submissionData = submission.node;
-                                  return (
-                                      <h3 className="content">{submissionData.title}</h3>
-                                  )
-                              })}
+                              <table border="1" style={{ borderCollapse: 'collapse' }}>
+                                  <thead>
+                                  <tr>
+                                      <th>タイトル</th>
+                                      <th>スピーカー</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  {beginnerSubmissions.map((submission, i) => {
+                                      const submissionData = submission.node;
+                                      return (
+                                          <tr>
+                                              <td>{submissionData.title}</td>
+                                              <td>{submissionData.speakerName}</td>
+                                          </tr>
+                                      )
+                                  })}
+                                  </tbody>
+                              </table>
                           </div>
                       </div>
                   </div>
@@ -38,6 +51,7 @@ export const beginnerSubmissionsQuery = graphql`
       edges {
         node {
           title
+          speakerName
         }
       }
     }

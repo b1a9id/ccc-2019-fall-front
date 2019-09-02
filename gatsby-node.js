@@ -111,7 +111,8 @@ exports.sourceNodes = async ({ actions }) => {
       children: [],
 
       // Other fields that you want to query with graphQl
-      title: submission.title
+      title: submission.title,
+      speakerName: submission.speakerName
     };
 
     // Get content digest of node. (Required field)
