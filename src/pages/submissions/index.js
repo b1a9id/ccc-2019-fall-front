@@ -15,7 +15,7 @@ const SubmissionsPage = (props) => {
                               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                                   初心者向け
                               </h2>
-                              <table border="1" style={{ borderCollapse: 'collapse' }}>
+                              <table>
                                   <thead>
                                   <tr>
                                       <th>タイトル</th>
